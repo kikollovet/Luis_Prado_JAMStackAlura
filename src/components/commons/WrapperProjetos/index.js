@@ -60,7 +60,10 @@ export default function WrapperProjetos(){
                 <Card src="https://www.cgtrack.com.br/Adm/Multimidia/ProdutoVarianteFoto/caminhoFoto/mdf_460_494/440.jpg"> 
                     Mais um Projeto 
                 </Card>
-                <CardDestaque src="https://www.publicitarioscriativos.com/wp-content/uploads/2019/01/Galeria-libera-mais-de-45-mil-imagens-de-obras-de-arte-para-download-gratuito-1100x600.png">
+                <CardDestaque
+                 src="https://www.publicitarioscriativos.com/wp-content/uploads/2019/01/Galeria-libera-mais-de-45-mil-imagens-de-obras-de-arte-para-download-gratuito-1100x600.png"
+                 description="Meu projeto mais trabalhoso, feito com muito carinho"
+                >
                     Projeto Destaque
                 </CardDestaque>
             </CardSection>

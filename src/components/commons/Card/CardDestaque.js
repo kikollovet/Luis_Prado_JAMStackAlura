@@ -81,25 +81,56 @@ const TextoDestaque = styled.div`
     }
     
 `
-export default function CardDestaque({src, children}){
+
+const CardTextWrapper = styled.div`
+        display: flex;
+        /* flex: 1; */
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+`
+
+const CardDescription = styled.span`
+    font-family: 'Fira Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    width: 240px;
+    word-break: break-word;
+    margin-bottom: 20px;
+    text-align: center;
+    @media only screen and (min-width: 768px){
+        font-size: 18px;
+        line-height: 22px;
+    }
+`
+export default function CardDestaque({src, children, description}){
     return(
         <CardWrapper>
             <CardImage src={src}>
                 <TextoDestaque>Destaque</TextoDestaque>
             </CardImage>
-            <CardTitle>
-                {children}
-            </CardTitle>
+            <CardTextWrapper>
+                <CardTitle>
+                    {children}
+                </CardTitle>
+                <CardDescription>
+                    {description}
+                </CardDescription>
+            </CardTextWrapper>
         </CardWrapper>
     )
 }
 
 CardDestaque.defaultProps = {
     src: 'https://baladasegura.rs.gov.br/themes/modelo-institucional/images/outros/GD_imgSemImagem.png',
-    children: 'Precisa ser passado o título do cartão'
+    children: 'Precisa ser passado o título do cartão',
+    description: 'Seria legal colocar uma descrição'
 }
 
 CardDestaque.propTypes = {
     src: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    description: PropTypes.node.isRequired
 }
