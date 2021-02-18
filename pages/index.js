@@ -3,6 +3,7 @@ import Capa from '../src/components/commons/Capa'
 import { Box } from '../src/components/foundation/layout/Box'
 import Cabecalho from '../src/components/commons/Cabecalho'
 import Rodape from '../src/components/commons/Rodape'
+import WrapperProjetos from '../src/components/commons/WrapperProjetos'
 
 const Title = styled.h1`
   font-size: 50px;
@@ -14,6 +15,7 @@ export default function Home() {
     <Box>
       <Capa />
       <Cabecalho />
+      <WrapperProjetos />
       <Rodape />
     </Box>
   )
