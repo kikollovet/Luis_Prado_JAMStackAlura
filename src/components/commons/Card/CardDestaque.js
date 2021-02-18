@@ -26,6 +26,9 @@ const CardTitle = styled.span`
     /* text-align: center; */
     padding-top: 20px;
     padding-bottom: 20px;
+    word-break: break-word;
+    width: 279px;
+    text-align: center;
     @media only screen and (min-width: 768px){ 
         font-size: 32px;
         line-height: 38px;
@@ -33,6 +36,7 @@ const CardTitle = styled.span`
         padding-bottom: 41px;
         padding-right: 20px;
         padding-left: 20px;
+        width: 240px;
     }
 `
 
