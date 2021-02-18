@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const CardWrapper = styled.div`
         display: flex;
@@ -87,4 +88,14 @@ export default function CardDestaque({src, children}){
             </CardTitle>
         </CardWrapper>
     )
+}
+
+CardDestaque.defaultProps = {
+    src: 'https://baladasegura.rs.gov.br/themes/modelo-institucional/images/outros/GD_imgSemImagem.png',
+    children: 'Precisa ser passado o título do cartão'
+}
+
+CardDestaque.propTypes = {
+    src: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired
 }
