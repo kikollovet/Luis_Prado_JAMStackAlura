@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const LeftImage = styled.div`
     width: 214.97px;
-    height: 322.31px;
+    height: 280.31px;
     top: 0px;
     background: url(/images/plantaCel.png);
     background-repeat: no-repeat;
@@ -11,10 +11,11 @@ const LeftImage = styled.div`
     background-color: transparent;
     @media only screen and (min-width: 768px){
         width: 479.81px;
-        height: 1000px;
+        height: 595px;
         top: 0px;
         background: url(/images/planta.png);
         background-repeat: no-repeat;
+        background-size: 500px;
         /* background-size: 479.81px 719.39px; */
         /* max-width: 768px; */
         /* background-size: contain; */
@@ -24,7 +25,7 @@ const LeftImage = styled.div`
 
 const RightImage = styled.div`
 width: 214.97px;
-height: 322.31px;
+height: 280.31px;
 background: url(/images/plantaCel.png);
 background-repeat: no-repeat;
 transform: rotate(180deg);
@@ -32,10 +33,11 @@ align-self: flex-end;
 background-color: transparent;
 @media only screen and (min-width: 768px){
     width: 479.81px;
-    height: 1000px;
+    height: 595px;
     background: url(/images/planta.png);
     background-repeat: no-repeat;
     transform: rotate(180deg);
+    background-size: 500px;
 }
 `
 
@@ -125,7 +127,7 @@ export default function Capa(){
             {/* </LeftImageWrapper> */}
             <NomeWrapper>
                 <NomeCapa>Luis Prado</NomeCapa>
-                <NomePortfolio>Portifolio</NomePortfolio>
+                <NomePortfolio>Portifólio</NomePortfolio>
             </NomeWrapper>
             {/* <RightImageWrapper> */}
             <RightImage />
