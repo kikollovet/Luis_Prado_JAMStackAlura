@@ -12,13 +12,15 @@ const RodapeWrapper = styled.div`
 `
 
 const IconImage = styled.img`
-    padding-top: 4px;
-    padding-right: 4px;
-    padding-left: 4px;
+    padding: 4px;
 `
 
 const LinkImagem = styled.a`
     background-color: #E9C46A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 function RodapeIcon({src, width, height, href}){
@@ -32,7 +34,19 @@ function RodapeIcon({src, width, height, href}){
 export default function Rodape() {
     return (
         <RodapeWrapper>
-            <RodapeIcon src="/images/githubIconFinal.svg" width="28px" height="28px" href="http://www.github.com/kikollovet" />
+            <RodapeIcon 
+                src="/images/githubIconFinal.svg" 
+                width="32px" 
+                height="32px" 
+                href="http://www.github.com/kikollovet"
+            />
+            <RodapeIcon 
+                src="/images/linkedinIcon.svg" 
+                width="32px" 
+                height="32px" 
+                href="http://www.linkedin.com/in/luis-henrique-llovet-38420795"
+            />
+            
         </RodapeWrapper>
     )
 }
