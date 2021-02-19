@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Card from '../Card'
 import CardDestaque from '../Card/CardDestaque'
 
-const WrapperProjetosDiv = styled.div`
+const WrapperProjetosContainer = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
@@ -48,7 +48,7 @@ const CardSection = styled.div`
 
 export default function WrapperProjetos(){
     return(
-        <WrapperProjetosDiv>
+        <WrapperProjetosContainer>
             <SectionTitle>Meus Projetos</SectionTitle>
             <CardSection>
                 <Card src="https://static-cse.canva.com/blob/183499/IMAGE-1.jpg">
@@ -67,6 +67,6 @@ export default function WrapperProjetos(){
                     Projeto Destaque
                 </CardDestaque>
             </CardSection>
-        </WrapperProjetosDiv>
+        </WrapperProjetosContainer>
     )
 }
