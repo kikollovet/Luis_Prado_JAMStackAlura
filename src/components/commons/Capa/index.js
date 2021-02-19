@@ -127,7 +127,7 @@ export default function Capa(){
             {/* </LeftImageWrapper> */}
             <NomeWrapper>
                 <NomeCapa>Luis Prado</NomeCapa>
-                <NomePortfolio>Portifólio</NomePortfolio>
+                <NomePortfolio>Portfólio</NomePortfolio>
             </NomeWrapper>
             {/* <RightImageWrapper> */}
             <RightImage />
