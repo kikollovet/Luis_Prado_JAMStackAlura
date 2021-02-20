@@ -1,18 +1,23 @@
 import styled from 'styled-components'
 import Card from '../Card'
 import CardDestaque from '../Card/CardDestaque'
+import { css } from 'styled-components';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
 
 const WrapperProjetosContainer = styled.div`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding-top: 32px;
-        padding-bottom: 32px;
-        @media only screen and (min-width: 768px){ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 32px;
+    padding-bottom: 32px;
+        
+    ${breakpointsMedia({
+        md: css`
             padding-top: 64px;
             padding-bottom: 64px;
-        }
+        `
+    })}
 `
 
 const SectionTitle = styled.span`
@@ -21,15 +26,16 @@ const SectionTitle = styled.span`
     font-weight: normal;
     font-size: 36px;
     line-height: 43px;
-
-    /* identical to box height */
     text-align: center;
     padding-bottom: 32px;
-    @media only screen and (min-width: 768px){ 
-        font-size: 60px;
-        line-height: 72px;
-        padding-bottom: 64px;
-    }
+    
+    ${breakpointsMedia({
+        md: css`
+           font-size: 60px;
+            line-height: 72px;
+            padding-bottom: 64px; 
+        `
+    })}
 `
 
 const CardSection = styled.div`
@@ -37,13 +43,16 @@ const CardSection = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    @media only screen and (min-width: 768px){
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+    
+    ${breakpointsMedia({
+        md: css`
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;            
+        `
+    })}
 `
 
 export default function WrapperProjetos(){

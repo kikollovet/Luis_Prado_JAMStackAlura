@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { css } from 'styled-components';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
 
 export const NavBar = styled.div`
     display: flex;
@@ -21,20 +23,22 @@ export const NavBar = styled.div`
             color: #070C0E;
         }
     }
-    /* identical to box height */
     text-align: center;
-    @media only screen and (min-width: 768px){ 
-        font-style: normal;
-        font-weight: normal;
-        font-size: 28px;
-        line-height: 34px;
-        a{
-            &:hover,
-            &:focus {
-                font-weight: 500;
-                color: #070C0E;
+    
+    ${breakpointsMedia({
+        md: css`
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 34px;
+            a{
+                &:hover,
+                &:focus {
+                    font-weight: 500;
+                    color: #070C0E;
+                }
             }
-        }
-    }
+        `
+    })}
     
 `

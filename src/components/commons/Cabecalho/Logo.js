@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { css } from 'styled-components';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
 
 export const Logo = styled.div`
     font-family: 'Fira Sans Condensed', sans-serif;
@@ -10,8 +12,11 @@ export const Logo = styled.div`
     background-color: #E9C46A;
     padding: 7px 7px;
     margin-left: 8px;
-    @media only screen and (min-width: 768px){
-        font-size: 38px;
-        line-height: 46px;
-    }
+    
+    ${breakpointsMedia({
+        md: css`
+            font-size: 38px;
+            line-height: 46px;
+        `
+    })}
 `

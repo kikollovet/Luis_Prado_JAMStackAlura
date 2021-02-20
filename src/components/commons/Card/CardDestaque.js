@@ -1,20 +1,25 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { css } from 'styled-components';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
 
 const CardWrapper = styled.div`
-        display: flex;
-        /* flex: 1; */
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        border: 1px solid #E9C46A;
-        box-sizing: border-box;
-        /* padding: 10px; */
-        margin: 10px;
-        @media only screen and (min-width: 768px){ 
+    display: flex;
+    /* flex: 1; */
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #E9C46A;
+    box-sizing: border-box;
+    /* padding: 10px; */
+    margin: 10px;
+    
+    ${breakpointsMedia({
+        md: css`
             flex-direction: row;
-            align-items: flex-start;
-        }
+            align-items: flex-start;  
+        `
+    })}
 `
 
 const CardTitle = styled.span`
@@ -29,15 +34,18 @@ const CardTitle = styled.span`
     word-break: break-word;
     width: 279px;
     text-align: center;
-    @media only screen and (min-width: 768px){ 
-        font-size: 32px;
-        line-height: 38px;
-        padding-top: 41px;
-        padding-bottom: 41px;
-        padding-right: 20px;
-        padding-left: 20px;
-        width: 240px;
-    }
+    
+    ${breakpointsMedia({
+        md: css`
+            font-size: 32px;
+            line-height: 38px;
+            padding-top: 41px;
+            padding-bottom: 41px;
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 240px;  
+        `
+    })}
 `
 
 const CardImage = styled.div`
@@ -45,10 +53,13 @@ const CardImage = styled.div`
     height: 177px;
     background: url(${({ src }) => src});
     background-size:cover;
-    @media only screen and (min-width: 768px){
-        width: 593px;
-        height: 320px;
-    }
+    
+    ${breakpointsMedia({
+        md: css`
+            width: 593px;
+            height: 320px;
+        `
+    })}
 `
 
 const TextoDestaque = styled.div`
@@ -66,28 +77,28 @@ const TextoDestaque = styled.div`
     width: 38%;
     padding-left: 10px;
     padding-right: 10px;
-    @media only screen and (min-width: 768px){
-        
-        font-weight: 400;
-        font-size: 38px;
-        line-height: 46px;
-       
-        top: 25px;
-        left: 25px;
-        width: 25%;
-        padding-left: 10px;
-        padding-right: 10px;
-        
-    }
+    
+    ${breakpointsMedia({
+        md: css`
+            font-weight: 400;
+            font-size: 38px;
+            line-height: 46px;
+            top: 25px;
+            left: 25px;
+            width: 25%;
+            padding-left: 10px;
+            padding-right: 10px;
+        `
+    })}
     
 `
 
 const CardTextWrapper = styled.div`
-        display: flex;
-        /* flex: 1; */
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
+    display: flex;
+    /* flex: 1; */
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 `
 
 const CardDescription = styled.span`
@@ -100,10 +111,13 @@ const CardDescription = styled.span`
     word-break: break-word;
     margin-bottom: 20px;
     text-align: center;
-    @media only screen and (min-width: 768px){
-        font-size: 18px;
-        line-height: 22px;
-    }
+    
+    ${breakpointsMedia({
+        md: css`
+            font-size: 18px;
+            line-height: 22px; 
+        `
+    })}
 `
 export default function CardDestaque({src, children, description}){
     return(

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const RodapeWrapper = styled.div`
     background-color: #FFF8E6;
@@ -49,4 +50,17 @@ export default function Rodape() {
             
         </RodapeWrapper>
     )
+}
+
+RodapeIcon.defaultProps = {
+    src: 'https://baladasegura.rs.gov.br/themes/modelo-institucional/images/outros/GD_imgSemImagem.png',
+    width: '32px',
+    height: '32px',
+}
+
+RodapeIcon.propTypes = {
+    src: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired,
+    height: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired
 }
