@@ -57,10 +57,10 @@ const CardImage = styled.img`
     })} 
 `
 
-export default function Card({src, children}){
+export default function Card({imageSrc, children, ...props}){
     return(
         <CardWrapper>
-            <CardImage src={src}/>
+            <CardImage src={imageSrc}/>
             <CardTitle>
                 {children}
             </CardTitle>
@@ -69,11 +69,11 @@ export default function Card({src, children}){
 }
 
 Card.defaultProps = {
-    src: 'https://baladasegura.rs.gov.br/themes/modelo-institucional/images/outros/GD_imgSemImagem.png',
+    imageSrc: 'https://baladasegura.rs.gov.br/themes/modelo-institucional/images/outros/GD_imgSemImagem.png',
     children: 'Precisa ser passado o título do cartão'
 }
 
 Card.propTypes = {
-    src: PropTypes.string.isRequired,
+    imageSrc: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired
 }

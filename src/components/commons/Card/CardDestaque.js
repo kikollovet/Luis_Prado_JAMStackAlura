@@ -119,10 +119,10 @@ const CardDescription = styled.span`
         `
     })}
 `
-export default function CardDestaque({src, children, description}){
+export default function CardDestaque({imageSrc, children, description}){
     return(
         <CardWrapper>
-            <CardImage src={src}>
+            <CardImage src={imageSrc}>
                 <TextoDestaque>Destaque</TextoDestaque>
             </CardImage>
             <CardTextWrapper>
@@ -138,13 +138,13 @@ export default function CardDestaque({src, children, description}){
 }
 
 CardDestaque.defaultProps = {
-    src: 'https://baladasegura.rs.gov.br/themes/modelo-institucional/images/outros/GD_imgSemImagem.png',
+    imageSrc: 'https://baladasegura.rs.gov.br/themes/modelo-institucional/images/outros/GD_imgSemImagem.png',
     children: 'Precisa ser passado o título do cartão',
     description: 'Seria legal colocar uma descrição'
 }
 
 CardDestaque.propTypes = {
-    src: PropTypes.string.isRequired,
+    imageSrc: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
     description: PropTypes.node.isRequired
 }
