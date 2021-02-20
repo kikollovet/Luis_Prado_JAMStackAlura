@@ -1,20 +1,24 @@
-import styled from 'styled-components'
-import { NavBar } from './NavBar'
-import { Logo } from './Logo'
+import React from 'react';
+import styled from 'styled-components';
+import { NavBar } from './NavBar';
+import { Logo } from './Logo';
 
 const CabecalhoWrapper = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    background-color: #FFF8E6;
-`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  background-color: #FFF8E6;
+`;
 
 export default function Cabecalho() {
-    return (
-        <CabecalhoWrapper>
-            <Logo>{'<ME />'}</Logo>
-            <NavBar><a href="">Sobre Mim</a><a href="">Contato</a></NavBar>
-        </CabecalhoWrapper>
-    )
+  return (
+    <CabecalhoWrapper>
+      <Logo>{'<ME />'}</Logo>
+      <NavBar>
+        <a href="teste">Sobre Mim</a>
+        <a href="teste">Contato</a>
+      </NavBar>
+    </CabecalhoWrapper>
+  );
 }

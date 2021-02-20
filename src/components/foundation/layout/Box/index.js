@@ -1,7 +1,9 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const Box = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: inherit;
-`
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: inherit;
+`;
+
+export default Box;
