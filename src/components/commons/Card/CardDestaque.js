@@ -10,7 +10,7 @@ const CardWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #E9C46A;
+  border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
   box-sizing: border-box;
   /* padding: 10px; */
   margin: 10px;
@@ -67,10 +67,10 @@ const TextoDestaque = styled.div`
   background-color: rgba(255, 255, 255, 0.5);
   color:black;
   text-align: center;
-  border: 1px solid #000000;
+  border: 1px solid ${({ theme }) => theme.colors.preto};
   top: 10px;
   left: 10px;
-  width: 38%;
+  width: min-content;
   padding-left: 10px;
   padding-right: 10px;
 
@@ -81,7 +81,7 @@ const TextoDestaque = styled.div`
       line-height: 46px;
       top: 25px;
       left: 25px;
-      width: 25%;
+      width: min-content;
       padding-left: 10px;
       padding-right: 10px;
     `,

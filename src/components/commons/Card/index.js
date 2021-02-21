@@ -10,7 +10,7 @@ const CardWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #E9C46A;
+  border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
   box-sizing: border-box;
   /* padding: 10px; */
   margin: 10px;

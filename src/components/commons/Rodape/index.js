@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const RodapeWrapper = styled.div`
-  background-color: #FFF8E6;
+  background-color: ${({ theme }) => theme.colors.begeClaro};
   /* background-color: blue; */
   /* text-align: center; */
   /* text-align: center; */
@@ -14,11 +14,11 @@ const RodapeWrapper = styled.div`
 `;
 
 const IconImage = styled.img`
-  padding: 4px;
+  padding: 10px;
 `;
 
 const LinkImagem = styled.a`
-  background-color: #E9C46A;
+  background-color: ${({ theme }) => theme.colors.begeEscuro};
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -9,7 +9,7 @@ export const Logo = styled.div`
   font-size: 18px;
   line-height: 22px;
   text-align: center;
-  background-color: #E9C46A;
+  background-color: ${({ theme }) => theme.colors.begeEscuro};
   padding: 7px 7px;
   margin-left: 8px;
 

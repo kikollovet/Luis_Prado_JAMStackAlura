@@ -8,7 +8,15 @@ export const breakpoints = {
   xl: 1200,
 };
 
+const colors = {
+  branco: '#FFFFFF',
+  preto: '#000000',
+  begeClaro: '#FFF8E6',
+  begeEscuro: '#E9C46A',
+};
+
 export default {
   breakpoints,
   typographyVariants,
+  colors,
 };

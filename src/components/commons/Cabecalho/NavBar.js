@@ -11,12 +11,12 @@ export const NavBar = styled.div`
   ${TextStylesVariantMap.navLink}
   a{
     margin: 8px;
-    color: #070C0E;
+    color: ${({ theme }) => theme.colors.preto};
     text-decoration: none;
     &:hover,
     &:focus {
       font-weight: 500;
-      color: #070C0E;
+      color: ${({ theme }) => theme.colors.preto};
     }
   }
   text-align: center;
@@ -28,7 +28,7 @@ export const NavBar = styled.div`
         &:hover,
         &:focus {
           font-weight: 500;
-          color: #070C0E;
+          color: ${({ theme }) => theme.colors.preto};
         }
       }
     `,

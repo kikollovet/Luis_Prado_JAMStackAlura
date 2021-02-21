@@ -8,7 +8,7 @@ const CabecalhoWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  background-color: #FFF8E6;
+  background-color: ${({ theme }) => theme.colors.begeClaro};
 `;
 
 export default function Cabecalho() {
