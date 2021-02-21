@@ -108,13 +108,16 @@ const CardDescription = styled.span`
   line-height: 22px;
   width: 240px;
   word-break: break-word;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   text-align: center;
 
   ${breakpointsMedia({
     md: css`
       font-size: 18px;
       line-height: 22px;
+      &::before {
+        content: "${(props) => props.description}"
+      }
     `,
   })}
 `;
@@ -128,9 +131,7 @@ export default function CardDestaque({ imageSrc, children, description }) {
         <CardTitle>
           {children}
         </CardTitle>
-        <CardDescription>
-          {description}
-        </CardDescription>
+        <CardDescription description={description} />
       </CardTextWrapper>
     </CardWrapper>
   );
