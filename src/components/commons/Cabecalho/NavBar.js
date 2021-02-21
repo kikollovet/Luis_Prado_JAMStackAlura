@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import { TextStylesVariantMap } from '../../foundation/Text';
 
 // eslint-disable-next-line import/prefer-default-export
 export const NavBar = styled.div`
@@ -7,11 +8,7 @@ export const NavBar = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
+  ${TextStylesVariantMap.navLink}
   a{
     margin: 8px;
     color: #070C0E;
@@ -26,10 +23,7 @@ export const NavBar = styled.div`
 
   ${breakpointsMedia({
     md: css`
-      font-style: normal;
-      font-weight: normal;
-      font-size: 28px;
-      line-height: 34px;
+      ${TextStylesVariantMap.navLinkMD}
       a{
         &:hover,
         &:focus {

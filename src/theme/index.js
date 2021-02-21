@@ -1,3 +1,5 @@
+import { typographyVariants } from './typographyVariants';
+
 export const breakpoints = {
   xs: 0,
   sm: 480,
@@ -8,4 +10,5 @@ export const breakpoints = {
 
 export default {
   breakpoints,
+  typographyVariants,
 };

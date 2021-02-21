@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import { TextStylesVariantMap } from '../../foundation/Text';
 
 const CardWrapper = styled.div`
   display: flex;
@@ -23,11 +24,7 @@ const CardWrapper = styled.div`
 `;
 
 const CardTitle = styled.span`
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
+  ${TextStylesVariantMap.titleProject}
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -36,8 +33,7 @@ const CardTitle = styled.span`
 
   ${breakpointsMedia({
     md: css`
-      font-size: 32px;
-      line-height: 38px;
+      ${TextStylesVariantMap.titleProjectMD}
       padding-top: 41px;
       padding-bottom: 41px;
       width: 277px;
