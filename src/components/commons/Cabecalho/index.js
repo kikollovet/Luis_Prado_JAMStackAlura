@@ -9,6 +9,8 @@ const CabecalhoWrapper = styled.div`
   align-items: center;
   flex-direction: row;
   background-color: ${({ theme }) => theme.colors.begeClaro};
+  /* position: sticky;
+  top: 0; */
 `;
 
 export default function Cabecalho() {

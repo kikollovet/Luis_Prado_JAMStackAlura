@@ -63,14 +63,13 @@ const TextoDestaque = styled.div`
   font-style: normal;
   font-size: 24px;
   line-height: 29px;
-  position: relative;
+  /* position: relative; */
   background-color: rgba(255, 255, 255, 0.5);
   color:black;
   text-align: center;
   border: 1px solid ${({ theme }) => theme.colors.preto};
-  top: 10px;
-  left: 10px;
   width: min-content;
+  margin: 10px;
   padding-left: 10px;
   padding-right: 10px;
 
@@ -79,11 +78,10 @@ const TextoDestaque = styled.div`
       font-weight: 400;
       font-size: 38px;
       line-height: 46px;
-      top: 25px;
-      left: 25px;
       width: min-content;
       padding-left: 10px;
       padding-right: 10px;
+      margin: 20px;
     `,
   })}
 `;
