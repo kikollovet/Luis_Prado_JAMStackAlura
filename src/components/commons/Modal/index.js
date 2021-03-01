@@ -58,7 +58,6 @@ function Modal({ isOpen, onClose, children }) {
       isOpen={isOpen}
       onClick={(event) => {
         const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
-        // isOpen = false;
         if (!isSafeArea) {
           onClose();
         }
