@@ -11,6 +11,8 @@ const Input = styled(Text)`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
   padding: 12px 16px;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
   outline: 0;
   border-radius: 8px;
 `;

@@ -1,17 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
+// eslint-disable-next-line import/no-named-as-default
+import GlobalStyle from '../src/theme/GlobalStyle';
 import theme from '../src/theme';
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Fira Sans Condensed', sans-serif;
-  }
-`;
 
 // eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps }) {

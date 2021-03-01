@@ -30,21 +30,35 @@ const FormInside = styled.form`
   align-items: stretch;
   width: 500px;
   padding: 15px;
-  flex-grow: inherit;
-
-
+  /* flex-grow: inherit; */
 `;
 
 const ButtonClose = styled.button`
   align-self:flex-end;
+  border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
+  background-color: transparent;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+  outline: none;
+`;
+
+const ButtonSend = styled.button`
+  align-self:flex-end;
   border: 0;
   background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
+  margin-left: 5px;
+  font-weight: bold;
+  outline: none;
 `;
 
 function FormContent() {
   return (
     <FormWrapper>
-      <ButtonClose>X</ButtonClose>
+      <ButtonClose type="button">x</ButtonClose>
       <FormInside>
         <Text style={{ alignSelf: 'center' }} variant="title" tag="h1">Envie sua mensagem</Text>
         <Text variant="navLink" tag="span">Seu nome</Text>
@@ -52,14 +66,18 @@ function FormContent() {
           <TextField name="name" placeholder="Seu nome" value="" onChange={() => {}} />
         </div>
         <Text variant="navLink" tag="span">Seu email</Text>
-        <TextField name="email" placeholder="E-mail" value="" onChange={() => {}} />
+        <div>
+          <TextField name="email" placeholder="E-mail" value="" onChange={() => {}} />
+        </div>
         <Text variant="navLink" tag="span">Sua mensagem</Text>
-        <TextField name="message" placeholder="Sua mensagem" value="" onChange={() => {}} />
+        <div>
+          <TextField name="message" placeholder="Sua mensagem" value="" onChange={() => {}} />
+        </div>
         <Text style={{ alignSelf: 'center' }} variant="navLink" tag="span">
           Enviar
-          <button type="submit">
+          <ButtonSend type="submit">
             &gt;
-          </button>
+          </ButtonSend>
         </Text>
       </FormInside>
     </FormWrapper>

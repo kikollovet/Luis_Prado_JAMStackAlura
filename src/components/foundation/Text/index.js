@@ -71,6 +71,7 @@ export default function Text({
     <TextBase
       as={tag}
       variant={variant}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
       {children}
@@ -85,12 +86,7 @@ Text.defaultProps = {
 };
 
 Text.propTypes = {
-  // children: PropTypes.node.isRequired,
-  // tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
-  // variant: PropTypes.oneOf(['title', 'paragraph1', 'smallestException']),
   children: PropTypes.node,
   tag: PropTypes.string,
   variant: PropTypes.string,
-  // A way to get the different styles of text without hard coding
-  // variant: PropTypes.oneOf(Object.keys(typographyVariants)),
 };
