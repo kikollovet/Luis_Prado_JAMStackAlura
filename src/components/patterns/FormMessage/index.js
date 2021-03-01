@@ -13,6 +13,7 @@ const BoxForm = styled.div`
   /* background-color: blue; */
 
   align-self:center;
+  background-color: white;
 `;
 
 const FormWrapper = styled.div`
@@ -46,7 +47,6 @@ const ButtonClose = styled.button`
 
 const ButtonSend = styled.button`
   align-self:flex-end;
-  border: 0;
   background-color: transparent;
   border-radius: 50%;
   border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
@@ -55,39 +55,66 @@ const ButtonSend = styled.button`
   outline: none;
 `;
 
-function FormContent() {
+// eslint-disable-next-line react/prop-types
+function FormContent({ onClose }) {
+  const [userInfo, setUserInfo] = React.useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  function handleChange(event) {
+    const fieldName = event.target.getAttribute('name');
+    setUserInfo({
+      ...userInfo,
+      [fieldName]: event.target.value,
+    });
+  }
+
+  function validateEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+
+  // eslint-disable-next-line max-len
+  const isFormValid = userInfo.name.length > 0 && validateEmail(userInfo.email) && userInfo.message.length > 0;
+
   return (
     <FormWrapper>
-      <ButtonClose type="button">x</ButtonClose>
+      <ButtonClose type="button" onClick={() => onClose()}>x</ButtonClose>
       <FormInside>
         <Text style={{ alignSelf: 'center' }} variant="title" tag="h1">Envie sua mensagem</Text>
         <Text variant="navLink" tag="span">Seu nome</Text>
         <div>
-          <TextField name="name" placeholder="Seu nome" value="" onChange={() => {}} />
+          <TextField name="name" placeholder="Seu nome" value={userInfo.name} onChange={handleChange} />
         </div>
         <Text variant="navLink" tag="span">Seu email</Text>
         <div>
-          <TextField name="email" placeholder="E-mail" value="" onChange={() => {}} />
+          <TextField name="email" placeholder="E-mail" value={userInfo.email} onChange={handleChange} />
         </div>
         <Text variant="navLink" tag="span">Sua mensagem</Text>
         <div>
-          <TextField name="message" placeholder="Sua mensagem" value="" onChange={() => {}} />
+          <TextField name="message" placeholder="Sua mensagem" value={userInfo.message} onChange={handleChange} />
         </div>
         <Text style={{ alignSelf: 'center' }} variant="navLink" tag="span">
           Enviar
-          <ButtonSend type="submit">
-            &gt;
-          </ButtonSend>
+          {isFormValid && (
+            <ButtonSend type="submit">
+              &gt;
+            </ButtonSend>
+          )}
         </Text>
       </FormInside>
     </FormWrapper>
   );
 }
 
-export default function FormMessage() {
+// eslint-disable-next-line react/prop-types
+export default function FormMessage({ propsDoModal, onClose }) {
   return (
-    <BoxForm>
-      <FormContent />
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <BoxForm {...propsDoModal}>
+      <FormContent onClose={onClose} />
     </BoxForm>
   );
 }

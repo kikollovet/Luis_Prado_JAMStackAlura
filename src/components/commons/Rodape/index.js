@@ -40,14 +40,14 @@ export default function Rodape() {
     <RodapeWrapper>
       <RodapeIcon
         src="/images/githubIconFinal.svg"
-        width="32px"
-        height="32px"
+        width="50px"
+        height="50px"
         href="http://www.github.com/kikollovet"
       />
       <RodapeIcon
         src="/images/linkedinIcon.svg"
-        width="32px"
-        height="32px"
+        width="50px"
+        height="50px"
         href="http://www.linkedin.com/in/luis-henrique-llovet-38420795"
       />
 
