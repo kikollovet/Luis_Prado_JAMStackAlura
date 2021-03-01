@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle, css } from 'styled-components';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 // import { motion } from 'framer-motion';
 
 const ModalWrapper = styled.div`
@@ -39,6 +40,16 @@ const LockScroll = createGlobalStyle`
   }
 `;
 
+const ChildrenWrapper = styled.div`
+  width: 100%;
+  ${breakpointsMedia({
+    md: css`
+      width: 550px;
+      align-self: center;
+    `,
+  })}
+`;
+
 function Modal({ isOpen, onClose, children }) {
   return (
     <ModalWrapper
@@ -53,11 +64,11 @@ function Modal({ isOpen, onClose, children }) {
     >
 
       {isOpen && <LockScroll />}
-      <div>
+      <ChildrenWrapper>
         {children({
           'data-modal-safe-area': 'true',
         })}
-      </div>
+      </ChildrenWrapper>
     </ModalWrapper>
   );
 }

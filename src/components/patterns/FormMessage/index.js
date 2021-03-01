@@ -1,8 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 // import Box from '../../foundation/layout/Box';
 import Text from '../../foundation/Text';
 import TextField from '../../forms/TextField';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
 const BoxForm = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
@@ -29,8 +30,13 @@ const FormInside = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  width: 500px;
+  width: 100%;
   padding: 15px;
+  ${breakpointsMedia({
+    md: css`
+      width: 500px;
+    `,
+  })}
   /* flex-grow: inherit; */
 `;
 
@@ -40,9 +46,17 @@ const ButtonClose = styled.button`
   background-color: transparent;
   border-radius: 50%;
   margin-top: 5px;
-  margin-right: 5px;
+  /* margin-right: 5px; */
   font-weight: bold;
   outline: none;
+  position: relative;
+  top: 0;
+  left: 30px;
+  ${breakpointsMedia({
+    md: css`
+      left: 15px;
+    `,
+  })}
 `;
 
 const ButtonSend = styled.button`
