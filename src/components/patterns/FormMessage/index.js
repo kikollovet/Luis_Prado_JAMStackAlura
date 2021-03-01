@@ -69,6 +69,16 @@ const ButtonSend = styled.button`
   outline: none;
 `;
 
+const MessageArea = styled.textarea`
+  width: 100%;
+  border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
+  padding: 12px 16px;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
+  outline: 0;
+  border-radius: 8px;
+`;
+
 // eslint-disable-next-line react/prop-types
 function FormContent({ onClose }) {
   const [userInfo, setUserInfo] = React.useState({
@@ -108,7 +118,7 @@ function FormContent({ onClose }) {
         </div>
         <Text variant="navLink" tag="span">Sua mensagem</Text>
         <div>
-          <TextField name="message" placeholder="Sua mensagem" value={userInfo.message} onChange={handleChange} />
+          <MessageArea rows="4" name="message" placeholder="Sua mensagem" value={userInfo.message} onChange={handleChange} />
         </div>
         <Text style={{ alignSelf: 'center' }} variant="navLink" tag="span">
           Enviar
