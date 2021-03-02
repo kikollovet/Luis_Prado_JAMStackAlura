@@ -127,7 +127,7 @@ function FormContent({ onClose }) {
   return (
     <FormWrapper>
       <ButtonClose type="button" onClick={() => onClose()}>
-        <img src="/images/closeForm.png" alt="Fechar formulário" />
+        <img src="/images/closeForm2.png" alt="Fechar formulário" />
       </ButtonClose>
       <FormInside
         onSubmit={(event) => {
@@ -190,7 +190,7 @@ function FormContent({ onClose }) {
           </Text>
           {isFormValid && (
             <ButtonSend type="submit">
-              <img src="/images/sendForm.png" alt="Enviar mensagem" />
+              <img src="/images/sendForm2.png" alt="Enviar mensagem" />
             </ButtonSend>
           )}
         </div>
