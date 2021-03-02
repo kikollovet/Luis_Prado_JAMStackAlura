@@ -135,7 +135,6 @@ function FormContent({ onClose }) {
           event.preventDefault();
           // eslint-disable-next-line no-console
           setIsFormSubmited(true);
-          setSubmissionStatus(formStates.LOADING);
 
           // Data Transfer Object
           const messageDTO = {
@@ -191,12 +190,12 @@ function FormContent({ onClose }) {
             Enviar
           </Text>
           {isFormValid && (
-            <ButtonSend type="submit">
+            <ButtonSend type="submit" onClick={() => setSubmissionStatus(formStates.LOADING)}>
               <img src="/images/sendForm3.png" alt="Enviar mensagem" />
             </ButtonSend>
           )}
         </div>
-        {isFormSubmited && submissionStatus === formStates.LOADING && (
+        {submissionStatus === formStates.LOADING && (
         <BoxLottie>
           <Lottie
             width="100px"
