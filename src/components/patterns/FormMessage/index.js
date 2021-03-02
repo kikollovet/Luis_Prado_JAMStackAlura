@@ -190,7 +190,7 @@ function FormContent({ onClose }) {
             Enviar
           </Text>
           {isFormValid && (
-            <ButtonSend type="submit" onClick={() => setSubmissionStatus(formStates.LOADING)}>
+            <ButtonSend style={{ marginTop: '5px' }} type="submit" onClick={() => setSubmissionStatus(formStates.LOADING)}>
               <img src="/images/sendForm3.png" alt="Enviar mensagem" />
             </ButtonSend>
           )}
