@@ -7,6 +7,7 @@ import TextField from '../../forms/TextField';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import successAnimation from './animations/success.json';
 import errorAnimation from './animations/error.json';
+import loadingAnimation from './animations/loading.json';
 
 const BoxForm = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
@@ -151,6 +152,7 @@ function FormContent({ onClose }) {
           })
             .then((respostaDoServidor) => {
               if (respostaDoServidor.ok) {
+                setSubmissionStatus(formStates.LOADING);
                 return respostaDoServidor.json();
               }
 
@@ -194,6 +196,16 @@ function FormContent({ onClose }) {
             </ButtonSend>
           )}
         </div>
+        {isFormSubmited && submissionStatus === formStates.LOADING && (
+        <BoxLottie>
+          <Lottie
+            width="100px"
+            height="100px"
+            config={{ animationData: loadingAnimation, loop: true, autoplay: true }}
+          />
+        </BoxLottie>
+        )}
+
         {isFormSubmited && submissionStatus === formStates.DONE && (
         <BoxLottie>
           <Lottie
