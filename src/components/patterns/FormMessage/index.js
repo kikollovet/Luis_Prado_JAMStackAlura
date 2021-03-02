@@ -88,7 +88,9 @@ const MessageArea = styled.textarea`
 
 const BoxLottie = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
 
 const formStates = {
@@ -161,6 +163,14 @@ function FormContent({ onClose }) {
               setSubmissionStatus(formStates.DONE);
               // eslint-disable-next-line no-console
               console.log(respostaConvertidaEmObjeto);
+              setTimeout(() => {
+                setMessageInfo({
+                  name: '',
+                  email: '',
+                  message: '',
+                });
+                setIsFormSubmited(false);
+              }, 5000);
             })
             .catch((error) => {
               setSubmissionStatus(formStates.ERROR);
@@ -212,6 +222,7 @@ function FormContent({ onClose }) {
             height="100px"
             config={{ animationData: successAnimation, loop: false, autoplay: true }}
           />
+          <span>Mensagem enviada!!</span>
         </BoxLottie>
         )}
 
@@ -222,6 +233,7 @@ function FormContent({ onClose }) {
             height="100px"
             config={{ animationData: errorAnimation, loop: false, autoplay: true }}
           />
+          <span>Tente de novo!!</span>
         </BoxLottie>
         )}
       </FormInside>
