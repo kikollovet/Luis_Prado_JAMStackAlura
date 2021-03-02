@@ -128,7 +128,7 @@ function FormContent({ onClose }) {
   return (
     <FormWrapper>
       <ButtonClose type="button" onClick={() => onClose()}>
-        <img src="/images/closeForm2.png" alt="Fechar formulário" />
+        <img src="/images/closeForm.png" alt="Fechar formulário" width="25px" height="25px" />
       </ButtonClose>
       <FormInside
         onSubmit={(event) => {
@@ -191,7 +191,7 @@ function FormContent({ onClose }) {
           </Text>
           {isFormValid && (
             <ButtonSend style={{ marginTop: '5px' }} type="submit" onClick={() => setSubmissionStatus(formStates.LOADING)}>
-              <img src="/images/sendForm3.png" alt="Enviar mensagem" />
+              <img src="/images/sendForm.png" alt="Enviar mensagem" width="25px" height="25px" />
             </ButtonSend>
           )}
         </div>

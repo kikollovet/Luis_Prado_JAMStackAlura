@@ -34,7 +34,7 @@ export default function Home() {
       <Box style={{ alignSelf: 'center', marginTop: '15px', marginBottom: '65px' }}>
         <Text variant="title" style={{ marginBottom: '5px' }}>Entre em contato</Text>
         <Button onClick={() => setModalState(!isModalOpen)} style={{ alignSelf: 'center' }} type="button">
-          <img src="/images/addMessage2.png" alt="Escrever mensagem" width="25px" height="25px" />
+          <img src="/images/addMessage.png" alt="Escrever mensagem" width="25px" height="25px" />
         </Button>
       </Box>
       <Rodape />
