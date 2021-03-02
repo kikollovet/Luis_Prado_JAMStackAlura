@@ -179,7 +179,7 @@ function FormContent({ onClose }) {
         </div>
         <Text variant="navLink" tag="span">Sua mensagem</Text>
         <div>
-          <MessageArea rows="4" name="message" placeholder="Sua mensagem" value={messageInfo.message} onChange={handleChange} />
+          <MessageArea rows="3" name="message" placeholder="Sua mensagem" value={messageInfo.message} onChange={handleChange} />
         </div>
         <div style={{
           height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center',
