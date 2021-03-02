@@ -31,8 +31,8 @@ export default function Home() {
       <Capa />
       <Cabecalho />
       <WrapperProjetos />
-      <Box style={{ alignSelf: 'center', margin: '15px' }}>
-        <Text variant="title">Entre em contato</Text>
+      <Box style={{ alignSelf: 'center', marginTop: '15px', marginBottom: '65px' }}>
+        <Text variant="title" style={{ marginBottom: '10px' }}>Entre em contato</Text>
         <Button onClick={() => setModalState(!isModalOpen)} style={{ alignSelf: 'center' }} type="button">+</Button>
       </Box>
       <Rodape />

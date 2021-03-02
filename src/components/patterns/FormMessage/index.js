@@ -1,9 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 // import Box from '../../foundation/layout/Box';
+import { Lottie } from '@crello/react-lottie';
 import Text from '../../foundation/Text';
 import TextField from '../../forms/TextField';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import successAnimation from './animations/success.json';
+import errorAnimation from './animations/error.json';
 
 const BoxForm = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
@@ -77,11 +80,27 @@ const MessageArea = styled.textarea`
   padding-bottom: 10px; */
   outline: 0;
   border-radius: 8px;
+  margin-bottom: 20px;
 `;
+
+const BoxLottie = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const formStates = {
+  DEFAULT: 'DEFAULT',
+  LOADING: 'LOADING',
+  DONE: 'DONE',
+  ERROR: 'ERROR',
+};
 
 // eslint-disable-next-line react/prop-types
 function FormContent({ onClose }) {
-  const [userInfo, setUserInfo] = React.useState({
+  const [isFormSubmited, setIsFormSubmited] = React.useState(false);
+  const [submissionStatus, setSubmissionStatus] = React.useState(formStates.DEFAULT);
+
+  const [messageInfo, setMessageInfo] = React.useState({
     name: '',
     email: '',
     message: '',
@@ -89,8 +108,8 @@ function FormContent({ onClose }) {
 
   function handleChange(event) {
     const fieldName = event.target.getAttribute('name');
-    setUserInfo({
-      ...userInfo,
+    setMessageInfo({
+      ...messageInfo,
       [fieldName]: event.target.value,
     });
   }
@@ -101,24 +120,62 @@ function FormContent({ onClose }) {
   }
 
   // eslint-disable-next-line max-len
-  const isFormValid = userInfo.name.length > 0 && validateEmail(userInfo.email) && userInfo.message.length > 0;
+  const isFormValid = messageInfo.name.length > 0 && validateEmail(messageInfo.email) && messageInfo.message.length > 0;
 
   return (
     <FormWrapper>
       <ButtonClose type="button" onClick={() => onClose()}>x</ButtonClose>
-      <FormInside>
+      <FormInside
+        onSubmit={(event) => {
+          event.preventDefault();
+          // eslint-disable-next-line no-console
+          setIsFormSubmited(true);
+
+          // Data Transfer Object
+          const messageDTO = {
+            name: messageInfo.name,
+            email: messageInfo.email,
+            message: messageInfo.message,
+          };
+
+          fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(messageDTO),
+          })
+            .then((respostaDoServidor) => {
+              if (respostaDoServidor.ok) {
+                return respostaDoServidor.json();
+              }
+
+              throw new Error('Não foi possível enviar sua mensagem :(');
+            })
+            .then((respostaConvertidaEmObjeto) => {
+              setSubmissionStatus(formStates.DONE);
+              // eslint-disable-next-line no-console
+              console.log(respostaConvertidaEmObjeto);
+            })
+            .catch((error) => {
+              setSubmissionStatus(formStates.ERROR);
+              // eslint-disable-next-line no-console
+              console.error(error);
+            });
+        }}
+      >
         <Text style={{ alignSelf: 'center' }} variant="title" tag="h1">Envie sua mensagem</Text>
         <Text variant="navLink" tag="span">Seu nome</Text>
         <div>
-          <TextField name="name" placeholder="Seu nome" value={userInfo.name} onChange={handleChange} />
+          <TextField name="name" placeholder="Seu nome" value={messageInfo.name} onChange={handleChange} />
         </div>
         <Text variant="navLink" tag="span">Seu email</Text>
         <div>
-          <TextField name="email" placeholder="E-mail" value={userInfo.email} onChange={handleChange} />
+          <TextField name="email" placeholder="E-mail" value={messageInfo.email} onChange={handleChange} />
         </div>
         <Text variant="navLink" tag="span">Sua mensagem</Text>
         <div>
-          <MessageArea rows="4" name="message" placeholder="Sua mensagem" value={userInfo.message} onChange={handleChange} />
+          <MessageArea rows="4" name="message" placeholder="Sua mensagem" value={messageInfo.message} onChange={handleChange} />
         </div>
         <Text style={{ alignSelf: 'center' }} variant="navLink" tag="span">
           Enviar
@@ -128,6 +185,25 @@ function FormContent({ onClose }) {
             </ButtonSend>
           )}
         </Text>
+        {isFormSubmited && submissionStatus === formStates.DONE && (
+        <BoxLottie>
+          <Lottie
+            width="100px"
+            height="100px"
+            config={{ animationData: successAnimation, loop: false, autoplay: true }}
+          />
+        </BoxLottie>
+        )}
+
+        {isFormSubmited && submissionStatus === formStates.ERROR && (
+        <BoxLottie>
+          <Lottie
+            width="100px"
+            height="100px"
+            config={{ animationData: errorAnimation, loop: false, autoplay: true }}
+          />
+        </BoxLottie>
+        )}
       </FormInside>
     </FormWrapper>
   );
