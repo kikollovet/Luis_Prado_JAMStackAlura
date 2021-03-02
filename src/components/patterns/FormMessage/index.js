@@ -135,6 +135,7 @@ function FormContent({ onClose }) {
           event.preventDefault();
           // eslint-disable-next-line no-console
           setIsFormSubmited(true);
+          setSubmissionStatus(formStates.LOADING);
 
           // Data Transfer Object
           const messageDTO = {
@@ -152,7 +153,6 @@ function FormContent({ onClose }) {
           })
             .then((respostaDoServidor) => {
               if (respostaDoServidor.ok) {
-                setSubmissionStatus(formStates.LOADING);
                 return respostaDoServidor.json();
               }
 
