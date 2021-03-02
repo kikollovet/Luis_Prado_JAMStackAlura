@@ -32,8 +32,10 @@ export default function Home() {
       <Cabecalho />
       <WrapperProjetos />
       <Box style={{ alignSelf: 'center', marginTop: '15px', marginBottom: '65px' }}>
-        <Text variant="title" style={{ marginBottom: '10px' }}>Entre em contato</Text>
-        <Button onClick={() => setModalState(!isModalOpen)} style={{ alignSelf: 'center' }} type="button">+</Button>
+        <Text variant="title" style={{ marginBottom: '5px' }}>Entre em contato</Text>
+        <Button onClick={() => setModalState(!isModalOpen)} style={{ alignSelf: 'center' }} type="button">
+          <img src="/images/addMessage.png" alt="Escrever mensagem" width="25px" height="25px" />
+        </Button>
       </Box>
       <Rodape />
     </Box>

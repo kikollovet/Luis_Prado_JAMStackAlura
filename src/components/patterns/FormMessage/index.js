@@ -45,28 +45,30 @@ const FormInside = styled.form`
 
 const ButtonClose = styled.button`
   align-self:flex-end;
-  border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
+  /* border: 1px solid ${({ theme }) => theme.colors.begeEscuro}; */
+  border: none;
   background-color: transparent;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   margin-top: 5px;
   /* margin-right: 5px; */
   font-weight: bold;
   outline: none;
   position: relative;
   top: 0;
-  left: 30px;
+  left: 40px;
   ${breakpointsMedia({
     md: css`
-      left: 15px;
+      left: 25px;
     `,
   })}
 `;
 
 const ButtonSend = styled.button`
-  align-self:flex-end;
+  /* align-self:flex-end; */
   background-color: transparent;
-  border-radius: 50%;
-  border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
+  border: none;
+  /* border-radius: 50%; */
+  /* border: 1px solid ${({ theme }) => theme.colors.begeEscuro}; */
   margin-left: 5px;
   font-weight: bold;
   outline: none;
@@ -124,7 +126,9 @@ function FormContent({ onClose }) {
 
   return (
     <FormWrapper>
-      <ButtonClose type="button" onClick={() => onClose()}>x</ButtonClose>
+      <ButtonClose type="button" onClick={() => onClose()}>
+        <img src="/images/closeForm.png" alt="Fechar formulário" />
+      </ButtonClose>
       <FormInside
         onSubmit={(event) => {
           event.preventDefault();
@@ -177,14 +181,19 @@ function FormContent({ onClose }) {
         <div>
           <MessageArea rows="4" name="message" placeholder="Sua mensagem" value={messageInfo.message} onChange={handleChange} />
         </div>
-        <Text style={{ alignSelf: 'center' }} variant="navLink" tag="span">
-          Enviar
+        <div style={{
+          height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center'
+        }}
+        >
+          <Text style={{ alignSelf: 'center' }} variant="navLink" tag="span">
+            Enviar
+          </Text>
           {isFormValid && (
             <ButtonSend type="submit">
-              &gt;
+              <img src="/images/sendForm.png" alt="Enviar mensagem" />
             </ButtonSend>
           )}
-        </Text>
+        </div>
         {isFormSubmited && submissionStatus === formStates.DONE && (
         <BoxLottie>
           <Lottie
