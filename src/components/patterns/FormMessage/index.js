@@ -190,7 +190,7 @@ function FormContent({ onClose }) {
           </Text>
           {isFormValid && (
             <ButtonSend type="submit">
-              <img src="/images/sendForm2.png" alt="Enviar mensagem" />
+              <img src="/images/sendForm3.png" alt="Enviar mensagem" />
             </ButtonSend>
           )}
         </div>
