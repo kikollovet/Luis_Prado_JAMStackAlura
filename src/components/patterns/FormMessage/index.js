@@ -69,7 +69,7 @@ const ButtonSend = styled.button`
   border: none;
   /* border-radius: 50%; */
   /* border: 1px solid ${({ theme }) => theme.colors.begeEscuro}; */
-  margin-left: 5px;
+  /* margin-left: 5px; */
   font-weight: bold;
   outline: none;
 `;
@@ -182,7 +182,7 @@ function FormContent({ onClose }) {
           <MessageArea rows="4" name="message" placeholder="Sua mensagem" value={messageInfo.message} onChange={handleChange} />
         </div>
         <div style={{
-          height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center'
+          height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center',
         }}
         >
           <Text style={{ alignSelf: 'center' }} variant="navLink" tag="span">
