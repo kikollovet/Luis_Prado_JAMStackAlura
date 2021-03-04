@@ -9,7 +9,7 @@ const ModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   /* align-items: stretch; */
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0);
   justify-content: flex-end;
   position: fixed;
   top: 0;
@@ -42,7 +42,8 @@ const LockScroll = createGlobalStyle`
 `;
 
 const ChildrenWrapper = styled.div`
-  width: 100%;
+  width: 95%;
+  align-self: center;
   ${breakpointsMedia({
     md: css`
       width: 550px;

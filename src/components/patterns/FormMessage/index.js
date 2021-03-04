@@ -10,15 +10,22 @@ import errorAnimation from './animations/error.json';
 import loadingAnimation from './animations/loading.json';
 
 const BoxForm = styled.div`
-  border: 1px solid ${({ theme }) => theme.colors.begeEscuro};
+  /* border: 1px solid ${({ theme }) => theme.colors.begeEscuro}; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /* background-color: blue; */
-
+  border-radius: 10px 10px 0px 0px;
   align-self:center;
   background-color: white;
+  box-shadow: 0px 1px 25px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  ${breakpointsMedia({
+    md: css`
+      width: 100%;
+    `,
+  })}
 `;
 
 const FormWrapper = styled.div`
@@ -56,7 +63,7 @@ const ButtonClose = styled.button`
   outline: none;
   position: relative;
   top: 0;
-  left: 40px;
+  left: 30px;
   ${breakpointsMedia({
     md: css`
       left: 25px;
