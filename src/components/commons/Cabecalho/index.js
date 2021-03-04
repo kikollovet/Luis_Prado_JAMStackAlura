@@ -11,7 +11,7 @@ const CabecalhoWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.begeClaro};
   /* position: sticky;
   top: 0; */
-`;
+`
 
 export default function Cabecalho() {
   return (
