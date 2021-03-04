@@ -20,12 +20,12 @@ const BoxForm = styled.div`
   align-self:center;
   background-color: white;
   box-shadow: 0px 1px 25px 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  /* width: 100%;
   ${breakpointsMedia({
     md: css`
       width: 100%;
     `,
-  })}
+  })} */
 `;
 
 const FormWrapper = styled.div`
