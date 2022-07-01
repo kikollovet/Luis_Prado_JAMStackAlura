@@ -12,7 +12,7 @@
   "dependencies": {
     "@crello/react-lottie": "^0.0.11",
     "@styled-icons/boxicons-regular": "^10.23.0",
-    "framer-motion": "^3.9.0",
+    "framer-motion": "^6.3.16",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^16.8.0",
